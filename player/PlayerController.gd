@@ -4,10 +4,13 @@ extends CharacterBody2D
 
 @onready var state_controller: PlayerStateController = $PlayerStateController
 @onready var inventory: Inventory = $Inventory
+@onready var interaction_area = $InteractionArea
+
 
 
 func _physics_process(delta):
 	handle_movement(delta)
+	handle_interaction() # 👈 ADD THIS
 
 
 func handle_movement(delta):
@@ -29,3 +32,12 @@ func handle_movement(delta):
 		velocity = Vector2.ZERO
 
 	move_and_slide()
+
+
+# -------------------------
+# INTERACTION (OPTION B)
+# -------------------------
+func handle_interaction():
+	if Input.is_action_just_pressed("interact"):
+		if interaction_area.nearby_interactable:
+			interaction_area.nearby_interactable.interact(self)

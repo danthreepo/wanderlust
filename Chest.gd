@@ -11,4 +11,5 @@ func interact(player):
 
 	if player.inventory.add_item(item, quantity):
 		opened = true
+		print("chest opened")
 		queue_free()

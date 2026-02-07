@@ -1,19 +1,17 @@
 extends Area2D
 
-var nearby_npc: Node = null
+var nearby_interactable: Node = null
 
 func _ready():
-	body_entered.connect(_on_body_entered)
-	body_exited.connect(_on_body_exited)
+	area_entered.connect(_on_area_entered)
+	area_exited.connect(_on_area_exited)
 
-func _process(_delta):
-	if nearby_npc and Input.is_action_just_pressed("interact"):
-		nearby_npc.interact()
+func _on_area_entered(area: Area2D) -> void:
+	var parent = area.get_parent()
+	if parent.has_method("interact"):
+		nearby_interactable = parent
 
-func _on_body_entered(body):
-	if body.has_method("interact"):
-		nearby_npc = body
-
-func _on_body_exited(body):
-	if body == nearby_npc:
-		nearby_npc = null
+func _on_area_exited(area: Area2D) -> void:
+	var parent = area.get_parent()
+	if parent == nearby_interactable:
+		nearby_interactable = null
