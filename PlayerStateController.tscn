@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c425ekf2bsrcm"]
+
+[ext_resource type="Script" uid="uid://dvl33nb37gig4" path="res://PlayerStateController.gd" id="1_aaluf"]
+
+[node name="PlayerStateController" type="Node" unique_id=1906122922]
+script = ExtResource("1_aaluf")

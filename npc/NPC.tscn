@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dhqf5u1ce37gy"]
+
+[ext_resource type="Script" uid="uid://dcmc23hlu2h87" path="res://npc/NPCBrain.gd" id="1_ycvxy"]
+[ext_resource type="PackedScene" uid="uid://t8dlj0078xtt" path="res://InteractionZone.tscn" id="2_3btx7"]
+[ext_resource type="PackedScene" uid="uid://0kb67m2pdj72" path="res://NpcInteraction.tscn" id="3_clkro"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3btx7"]
+radius = 12.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_clkro"]
+size = Vector2(12, 12)
+
+[node name="NPC" type="CharacterBody2D" unique_id=542409256 groups=["interactable"]]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_ycvxy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=343156040]
+shape = SubResource("CircleShape2D_3btx7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=93728696]
+texture_filter = 1
+texture = SubResource("PlaceholderTexture2D_clkro")
+
+[node name="InteractionZone" parent="." unique_id=1655086999 instance=ExtResource("2_3btx7")]
+
+[node name="NPCInteraction" parent="." unique_id=1850743764 instance=ExtResource("3_clkro")]

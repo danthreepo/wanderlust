@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cr32fxsy58gt3"]
+
+[ext_resource type="Script" uid="uid://cg3gfvfdg84bt" path="res://core/game_state_test.gd" id="1_rtgmx"]
+
+[node name="GameStateTest" type="Node" unique_id=1530440437]
+script = ExtResource("1_rtgmx")

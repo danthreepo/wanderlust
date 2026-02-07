@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://o7hm5sewf7c2"]
+
+[ext_resource type="Script" uid="uid://c2yk6l442dwva" path="res://core/scene_loader_test.gd" id="1_wai1m"]
+
+[node name="SceneLoaderTest" type="Node" unique_id=965201050]
+script = ExtResource("1_wai1m")

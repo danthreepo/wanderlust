@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b3trwtjc2o81b"]
+
+[ext_resource type="Script" uid="uid://bp4ckwrfsob4m" path="res://data/items/ItemData.gd" id="1_kwwdd"]
+
+[resource]
+script = ExtResource("1_kwwdd")
+id = "test_item"
+display_name = "Test Item"
+description = "A placeholder item used for testing."
+metadata/_custom_type_script = "uid://bp4ckwrfsob4m"
